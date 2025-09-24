@@ -11,7 +11,7 @@ def on_page_context(context, page, config, nav):
             or meta.get("git_creation_date_localized")
             or meta.get("revision_date")
         )
-        is_expired = True
+        is_expired = False
         last_update = None
         if revision:
             m = re.search(r"(\d{4}-\d{2}-\d{2})", str(revision))
