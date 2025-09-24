@@ -4,7 +4,6 @@ theme:
   custom_dir: overrides
 
 plugins:
-  - meta
   - blog:
       archive: false
       post_date_format: short
