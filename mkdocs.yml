@@ -1,0 +1,75 @@
+site_name: My Docs
+theme:
+  name: material
+  custom_dir: overrides
+
+plugins:
+  - meta
+  - blog:
+      archive: false
+      post_date_format: short
+      blog_toc: true
+      categories_toc: true
+      pagination: false
+  - git-revision-date-localized:
+      enable_creation_date: true
+      timezone: Asia/Shanghai
+      type: iso_datetime
+      fallback_to_build_date: true
+
+
+hooks:
+  - hooks/expiry.py
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/RapidAI
+    - icon: fontawesome/brands/weixin
+      link: https://raw.githubusercontent.com/RapidAI/.github/main/assets/RapidAI_poster_compose.png
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/rapidocr/
+  version:
+    provider: mike
+  expiry_days: 1
+
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - pymdownx.snippets
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - footnotes
+  - def_list
+  - md_in_html
+  - tables
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+        anchor_linenums: true
+        line_spans: __span
+        pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+
+
